@@ -36,9 +36,15 @@ public class Task4 {
     }
 
     public static int[] arrDiffer(int[] arr1, int[] arr2) {
+        if (arr1 == null || arr2 == null) {
+            throw new RuntimeException("Arrays must not be empty");
+        }
         int[] ans = new int[arr1.length];
         for (int i = 0; i < arr1.length; i++) {
             ans[i] = arr1[i] - arr2[i];
+            if (arr2[i] == 0) {
+                throw new RuntimeException("Sorry, I can't divide by zero!");
+            }
         }
         return ans;
     }
