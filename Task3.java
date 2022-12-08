@@ -13,9 +13,6 @@ public class Task3 {
     public static void main(String[] args) {
         int[] arr1 = createArr();
         int[] arr2 = createArr();
-        if (arr1.length != arr2.length) {
-            throw new RuntimeException("Arrays must be equal");
-        }
         System.out.println(Arrays.toString(arrDiffer(arr1, arr2)));
     }
 
@@ -32,6 +29,9 @@ public class Task3 {
     }
 
     public static int[] arrDiffer(int[] arr1, int[] arr2) {
+        if (arr1.length != arr2.length) {
+            throw new RuntimeException("Arrays must be equal");
+        }
         int[] ans = new int[arr1.length];
         for (int i = 0; i < arr1.length; i++) {
             ans[i] = arr1[i] - arr2[i];
